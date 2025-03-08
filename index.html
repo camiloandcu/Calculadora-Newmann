@@ -3,31 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulación Von Neumann</title>
+    <title>Simulación Arquitectura Von Neumann</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Simulación de Arquitectura de Von Neumann</h1>
-    <button id="startButton">Iniciar</button>
+    <h1>Arquitectura de Von Neumann</h1>
 
     <div class="container">
         <div class="unidad-control">
             <h2>Unidad de Control</h2>
-            <p>Contador de Programa: <span id="pc">0000</span></p>
-            <p>Registro de Instrucción: <span id="ri">00000000</span></p>
+            <div id="contador-programa" class="registro">Contador: 0000</div>
+            <div id="registro-instrucciones" class="registro">Instrucciones: 00000000</div>
+            <div id="decodificador" class="registro">Decodificador</div>
         </div>
 
         <div class="memoria">
             <h2>Memoria</h2>
-            <div id="mem-table"></div>
+            <div id="registro-direcciones" class="registro">Direcciones: 0000</div>
+            <div id="registro-datos" class="registro">Datos: 00000000</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dir</th>
+                        <th>Contenido</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-memoria"></tbody>
+            </table>
         </div>
 
         <div class="alu">
             <h2>Unidad Aritmético-Lógica (ALU)</h2>
-            <p>Acumulador: <span id="acumulador">00000000</span></p>
-            <p>Registro de Entrada: <span id="entrada">00000000</span></p>
+            <div id="acumulador" class="registro">Acumulador: 00000000</div>
+            <div id="registro-entrada" class="registro">Entrada: 00000000</div>
         </div>
     </div>
+
+    <button id="continuar">Continuar</button>
 
     <script src="script.js"></script>
 </body>
